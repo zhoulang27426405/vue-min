@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div id="app"></div>
+<script type="text/javascript" src="./vue-min.js"></script>
+<script type="text/javascript">
+var vm = new Vue({
+  el: 'app',
+  data: {
+    message: 'hello world'
+  },
+  render() {
+    return createElement(
+      'div',
+      {
+        attrs: {
+          class: 'wrap'
+        }
+      },
+      [
+        createElement(
+          'p',
+          {
+            attrs: {
+              class: 'inner'
+            }
+          },
+          this.message
+        )
+      ]
+    )
+  }
+});
+
+setTimeout(function () {
+  vm.message = 'Hello';
+}, 1000)
+
+</script>
+</body>
+</html>
